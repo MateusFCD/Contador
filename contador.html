@@ -1,4 +1,79 @@
-Contador
-Reiniciar
-Faltam
-Dias Horas Minutos Segundos
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Contador</h1>
+        <a href="index.html">Reiniciar</a>
+    </nav>
+    <h2>Faltam</h2>
+    
+
+    <div class="container" id="tempo">
+        <div class="child">
+            <div id="dias" class="number">0</div>
+            <p>Dias</p>
+        </div>
+
+        <div class="child">
+            <div id="horas" class="number">0</div>
+            <p>Horas</p>
+        </div>
+
+        <div class="child">
+            <div id="minutos" class="number">0</div>
+            <p>Minutos</p>
+        </div>
+
+        <div class="child">
+            <div id="segundos" class="number">0</div>
+            <p>Segundos</p>
+        </div>
+
+    </div>
+
+    <script>
+     
+
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        console.log(params.dataFinal);
+
+        var dataFinal = new Date(params.dataFinal);
+        
+        setInterval( function() {
+
+            var dataAtual = new Date();
+            var seconds = Math.floor((dataFinal - dataAtual) / 1000);
+            var minutes = Math.floor(seconds/60);
+            var hours = Math.floor(minutes/60);
+            var days = Math.floor(hours/24);
+
+            hours = hours-(days*24);
+            minutes = minutes-(days*24*60)-(hours*60);
+            seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
+
+            document.getElementById("dias").innerText = days;
+            document.getElementById("horas").innerText = hours;
+            document.getElementById("minutos").innerText = minutes;
+            document.getElementById("segundos").innerText = seconds;
+
+        }, 1000)
+        
+
+    </script>
+
+</body>
+</html>
+
+
+

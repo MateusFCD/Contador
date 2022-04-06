@@ -1,0 +1,42 @@
+/*index*/
+body {
+    background-color: black;
+    text-align: center;
+    padding-top: 8%;
+}
+body h1 {
+    font-family: "Roboto";
+    color: #21EB00;
+    font-size: 3.6rem;
+}
+body h2 {
+    font-family: "Roboto";
+    color: #999b97;
+    font-size: 2rem;
+    font-weight: 400;
+}
+.data {
+    width: 400px;
+    height: 40px;
+    border-radius: 35px;
+    background-color: #191A18;
+    border-color: rgba(25, 26, 24, .1);
+    font-size: "Roboto";
+    text-transform: uppercase;
+    color: #999b97;
+    font-size: 2rem;
+    padding: 1%;
+}
+.contagem {
+    width: 440px;
+    height: 70px;
+    border-radius: 35px;
+    background-color: #21EB00;
+    border-color: rgba(33, 235, 0, .1);
+    font-family: "Roboto";
+    font-weight: 900;
+    font-size: 2rem;
+    padding: 1%;
+    margin-top: 30px;
+}
+
